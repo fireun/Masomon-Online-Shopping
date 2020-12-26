@@ -1,0 +1,11 @@
+body,ul,li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    /* overflow-x: hidden; */
+}
+
+* {
+   font-family: 'Times New Roman', Times, serif;
+   font-size: 15px;
+}

@@ -1,0 +1,188 @@
+body{
+    background-color: #f2f2f2!important;
+}
+
+.profile-container {
+    top:155px;
+}
+
+/* left image box */
+.imges-box-underline {
+    color: black;
+}
+
+.imges-box-underline a:hover {
+    text-decoration: none;
+}
+
+.imges-box-underline:nth-child(2) {
+    font-size: small;
+    color: darkslategray;
+}
+
+.images-position {
+    width: 50%;
+    height: 50%;
+    /* margin-left: -7%; */
+    float: right;
+    position: relative;
+    left: 8%;
+}
+
+/* left bar */
+.profile-account-link {
+    color: black;
+    position: relative;
+    left: 12px;
+    font-size: 18px;
+    height: 20%;
+}
+
+.profile-account-link:hover, .profile-bar-link:hover {
+    color: #CD5C5C;
+    text-decoration:none;
+    cursor: pointer;
+}
+
+
+.account-ul-text {
+    margin-top: 10%;
+    margin-left: -20%;
+}
+
+.link-active {
+    color:#CD5C5C;
+}
+
+/*right box profile**/
+.profile-click-btn {
+    position: relative;
+    top: -39px;
+    color: #CD5C5C;
+    font-weight: bold;
+    font-size: 19px;
+    left: 37px;
+}
+
+.upload-image-input-box {
+    /* position: absolute; */
+    width: 56%;
+    top: 112px;
+    left: 64px;
+    bottom: 0;
+    height: 30px;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    line-height: 31px;
+}
+
+.profile-images-upload {
+    width: 70%;
+    height: 33%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    cursor: pointer;
+    margin-left:15%
+}
+
+.profile-input-username,.profile-input-birth {
+    margin: 0% 0% 0% 4%;
+    width: 70%;
+    border-color: #CD5C5C;
+}
+
+.profile-input-firstname,.profile-input-lastname {
+    margin: 0% 0% 0% 7%;
+    width: 50%;
+    border-color: #CD5C5C;
+}
+
+.profile-input-email {
+    margin: 0% 0% 0% 9%;
+    width: 70%;
+    border-color: #CD5C5C;
+}
+
+.profile-input-usern {
+    margin: 0% 0% 0% 9%;
+    width: 70%;
+    border-color: #CD5C5C;
+}
+
+.mobile-input-name {
+    margin: 4% 0% 0% 2%;
+    position: relative;
+    left: 4%;
+}
+
+.mobile-profile-gender {
+    margin: 4% 0% 0% 4%;
+    position: relative;
+    left: 6%;
+}
+
+.mobile-profile-gender-radio {
+    margin-left: 4%;
+}
+
+.mobile-profile-submit-btn {
+    margin: 7% 10% 1% 0%;
+    float:right;
+    position: relative;
+    right: 10%;
+}
+
+
+@media screen and (max-width: 800px) {
+    .profile-container {position: relative;top: 125px;width: 90%!important;left: 28px;}
+    .web-profile-bar {display: none;}
+    .mobile-right-box-m {margin: 0%!important;border-radius: 2%;}
+    .profile-images-upload{width: 35%;height: 100px!important;margin-left: 35%;}
+    .profile-click-btn {left: 42px;}
+    .mobile-input-name {position: relative;left: 4%;}
+    .profile-input-firstname {margin: 0% 0% 4% 2%;width: 67%;}
+    .profile-input-lastname{margin: 0% 0% 0% 2.5%;width: 67%;}
+    .profile-input-email {margin: 0% 0% 0% 11%;}
+    .mobile-profile-gender {display: -webkit-inline-box!important;position: relative;left: 7%;}
+    .mobile-profile-gender-radio {margin-left: 16%;}
+    .mobile-profile-submit-btn {position: relative;left: -57%;}
+    .profile-input-birth {width: 66%;}
+    .footer{margin-top: 50%!important;}
+} 
+
+/* End user profile css */
+
+
+/* account address  */
+.mobile-create-address-btn {
+    margin:0% 0% 1% 70%;
+    background-color:#CD5C5C
+}
+.mobile-account-address-box {
+    background-color: white;
+
+}
+@media screen and (max-width: 800px) {
+    .mobile-account-address-box {position: relative;left: 0%;}
+    .mobile-account-address-leftbox {display: none;}
+    .mobile-create-address-btn{margin: 0% 0% 1% 33%;}
+    .footer{margin-top: 50%!important;}
+} 
+/* End account address */
+
+
+/* account change password */
+.changePassword-submit-btn {
+    margin-left: 45%;
+}
+@media screen and (max-width: 800px) {
+    .mobile-account-changePassword-box {display: none;}
+    .changePassword-submit-btn {margin-left: 4%;}
+    .footer{margin-top: 50%!important;}
+}
+
+/* End account change password */

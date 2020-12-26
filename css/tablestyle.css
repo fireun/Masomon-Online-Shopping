@@ -1,0 +1,121 @@
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+  
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  /* Style the submit button */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  /* Style the container */
+  /* .container {
+    border-radius: 5px;
+    background-color: white;
+    /* padding: 20px; 
+    margin: 10PX;
+    box-shadow: 0px 0px 2px #999;
+  } */
+  
+  /* Floating column for labels: 25% width -createProduct Page*/
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .row .input-size-box {
+      padding-top: 10px;
+  }
+
+  /* createProduct Page create btn */
+  .row .submit-btn {
+    border: 0;
+    border-radius: 60px;
+    width: 250px;
+    height: 55px;
+    background-color: #4CAF50;
+    color: white;
+    /* text-align: center; */
+    margin: 30px 0px 0px 370px;
+    box-shadow: 0 6px #999;/*shadow*/
+    outline: none;/*click的时候不会有外面的线*/
+    float: left;
+  }
+
+  .submit-btn:nth-child(2) {
+    margin: 30px 0px 0px 50px;
+  }
+
+  .row .submit-btn:hover {
+    color: black;
+  }
+
+  /* click the moment efect */
+  .submit-btn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #333;
+    transform: translateY(4px);
+    border: 0px;
+  }
+
+  form button .hovertimes:hover {
+      color: red;
+  }
+
+  #showSizeBtn li {
+      list-style-type: none;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+    .row .submit-btn {width: 175px;height: 40px;margin: 4%;}
+    .mobile-btn {margin: 2%!important;width: 45%!important;}
+    .cancel-btn {margin:7% 0% 0% 0%}
+  }
+
+  /* createProduct page info box */
+  .create-product-tab-box {
+    width: 95%;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    margin: 10PX;
+    box-shadow: 0px 0px 10px #999;
+  }
+

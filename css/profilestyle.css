@@ -1,0 +1,234 @@
+.profile-box {
+  width: 100%;
+  height: 700px;
+  /* background-color: red; */
+}
+
+/* profile left side box */
+.profile-box-left {
+  width: 20%;
+  float:left;
+  border-radius: 10px;
+  /* background-color: #f2f2f2; */
+  /* margin: 10px; */
+  padding: 10px;
+  /* background-color: red; */
+  
+}
+
+/* 左上角的image 最大的边框 */
+.profile-box-left .profile-image-box {
+  height: 150px;
+  background-color: white;
+  margin-top: -3px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px #999;
+}
+
+/* profile image box  with tools box 左边的2个box*/
+.profile-box-left-image, .profile-box-left-tools {
+  width: 100%;
+  border-radius: 10px;
+  /* background-color: #f2f2f2; */
+  /* position: relative; */
+}
+
+.profile-box-left-tools .edit-box button:hover, .images-upload-button-box:hover, .upload-image-btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #999;
+}
+
+
+/* .profile-box-left img {
+  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+  margin-top: 60px;
+  margin-left: 80px;
+  border: 1px solid black;
+} */
+
+/* image box的外边框 */
+.profile-box-left .upload-image-box {
+  /* position: absolute; */
+  margin: 30px auto;
+  top: 19px;
+  left: 60px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  cursor: pointer;
+}
+
+/* profile image */
+.profile-box-left .upload-image-box img {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* the word in the profile image box  */
+.profile-box-left .upload-image-box .upload-image-input-box {
+  /* position: absolute; */
+  width: 100%;
+  top: 80px;
+  bottom: 0;
+  height: 30px;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  line-height: 15px;
+}
+
+/* 左边side bar */
+.profile-box-left .profile-box-left-tools {
+  margin-top: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 2px #999;
+  padding: 2px;
+  padding-bottom: 10px;
+}
+
+/* edit btn */
+.profile-box-left .profile-box-left-tools .edit-box,.images-upload-button-box {
+  border: 0;
+  border-radius: 30px;
+  width: 150px;
+  height: 45px;
+  color: white;
+  background-color: #12CBA1;
+  margin: 10px 0px 0px 45px;
+  outline: none;
+  text-align: center;
+}
+
+.upload-image-btn {
+  border:0px;
+  background: none;
+  line-height: 43px;
+  outline: none;
+}
+
+
+.edit-box a {
+  text-decoration: none;
+  line-height: 43px;
+}
+
+
+
+ /* .profile-box-left .upload-image-box {
+  border: 1px dashed #2bb2bb;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+} */
+
+/* .profile-box-left .upload-image-box .upload-image-input {
+  display: none;
+} */
+
+
+/* .profile-box-left .img-box img {
+  border-radius: 20px;
+} */
+
+
+/* 右边最大的边框 */
+.profile-box-right {
+  width: 73%;
+  float: left;
+  /* background-color: royalblue; */
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  margin:5px;
+  box-shadow: 0px 0px 2px #999;
+}
+
+/* attribute */
+.profile-box-right .profile-box-row .profile-col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* input box */
+.profile-box-right .profile-box-row .profile-col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/*default view profile*/
+/* .profile-view-mode {
+  display: none;
+}
+
+.profile-edit-mode {
+  display: block;
+} */
+
+input[type=text],input[type=email],input[type=number],input[type=tel] ,select,textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input[type=radio] {
+  width: 10%;
+}
+
+/* submit btn */
+.profile-box-right .actionBtn button {
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: 0;
+  border-radius: 25px;
+  width: 250px;
+  height: 50px;
+  margin: 0px 0px 20px 330px;
+  box-shadow: 0 5px #999;/*shadow*/
+  outline: none;/*click的时候不会有外面的线*/
+}
+
+.profile-box-right .actionBtn button:hover {
+  color: black;
+}
+
+/* click btn effect */
+.actionBtn button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #333;
+  transform: translateY(4px);
+  border: 0px;
+}
+
+/* mobile screen mode */
+@media screen and (max-width: 800px) {
+  /* left */
+  .profile-box-left .upload-image-box {width: 70px;height: 70px;top:35px;left:12px}
+  .profile-box-left .upload-image-box .upload-image-input-box {top:53px;font-size:12px}
+  .profile-box-left .profile-box-left-tools .edit-box button {width:70px;height: 35px;padding: 2px;margin: 20px 0px 0px 20px;}
+  .profile-box-left {width: -webkit-fill-available;}
+  
+  /* right */
+  .profile-box-right {width: 90%;}
+  label {padding: 0px}
+  .profile-box-right .actionBtn button  {width: 130px;height: 35px;margin: 30px 0px 15px 150px;}
+}

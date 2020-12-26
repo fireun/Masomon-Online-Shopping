@@ -1,0 +1,192 @@
+/* .container-padding-box {
+        padding: 20px 20px 50px 20px;
+} */
+
+.contentbar .container-box {
+    border-radius: 5px;
+    background-color: white;
+    margin: 10PX;
+    padding: 20px 20px 50px 20px;
+    box-shadow: 0px 0px 2px #999;
+  }
+
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+} 
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5,
+ .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10,
+ .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+ .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10,
+ .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+ .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10,
+ .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+ .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10,
+ .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6,
+ .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    /* position: relative; */
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+    border-color: grey;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    box-shadow: 0px 0px 2px #999;
+}
+
+.table-responsive>.table-bordered {
+    border: 0;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* border: 1px solid transparent; */
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button {
+    border-radius: 0;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+}
+.float-right {
+    float: right!important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-top: 6px;
+}
+/* tbody .hidden:hover {
+    background-color: gray;
+} */
+
+.del .submitBtn {
+    width:60px;
+    padding:5px;
+    outline:none;
+}
+
+.del .submitBtn:active {
+    background-color: #999;
+    border: 0px;
+}
+
+@media screen and (max-width: 800px) {
+    button, input[type=text], optgroup, select, textarea {width: 100px;}
+    .side-button {width:0%!important;}
+  }
+

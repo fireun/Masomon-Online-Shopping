@@ -1,0 +1,407 @@
+body {margin:0;font-family:Arial;overflow-x: hidden;}
+
+.navbar {
+  width: 100%;
+  height: 7%;
+  top: 0%;
+  left: 0%;
+  position: fixed;
+  box-shadow: 0 10px 5px -3px #888888 /* left&right top&bottom 淡化程度 bottom */
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    z-index: 6666;
+    box-shadow: 0px 3px 10px #888888;
+  }
+
+  /* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  
+ Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0)
+  .sticky + .content {
+    padding-top: 102px;
+  }
+  
+  /* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  } */
+
+  /* Style the links inside the navigation bar */
+  .topnav .header {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav .logobox {
+    width: 70px;
+    height: 20px;
+    background-image: url(../images/seller.png);
+    background-size: 100% 100%;
+  }
+
+  /* Add an active class to highlight the current page 被选中 */
+  /* .active {
+    background-color: #CD5C5C;
+    color: black;
+  } */
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+  
+  /* Dropdown container - needed to position the dropdown content */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Style the dropdown button to fit inside the topnav */
+  .dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  /* Style the dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    /* background-color: #555; */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Style the links inside the dropdown */
+  .dropdown-content .dropBtn-a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a dark background on topnav links and the dropdown button on hover */
+  /* .topnav .header:hover, .dropdown:hover .dropbtn {
+    background-color: #CD5C5C;
+    color: white;
+  } */
+
+  .dropdown:hover .dropbtn {
+    background-color: #CD5C5C;
+    color: white;
+  }
+  
+  /* Add a grey background to dropdown links on hover */
+  .dropdown-content .dropBtn-a:hover {
+    background-color: #CD5C5C;
+    color: black;
+  }
+  
+  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* user box in header */
+  .navbar .topnav .navbar-right-box {
+    margin: 4px 0 4px 1200px;
+  }
+
+  .navbar .topnav .navbar-right-box .account-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 40px;
+    padding: 4px 15px 4px 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .navbar .topnav .navbar-right-box .account-info:hover {
+    border: 3px solid #555;
+    border-radius: 20px;
+  }
+
+  .navbar .topnav .navbar-right-box .account-info img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+  
+  .account-show-box {
+    position: fixed;
+    top: 50px;
+    /* left: 938px; */
+    background-color: #FFF;
+    z-index: 1;
+    width: 110px;
+    height: 65px;
+    padding: 8px;
+    box-shadow: 0px 4px 8px #555;
+    border-radius: 15px;
+    /* display: none; */
+  }
+
+  .navbar .account-show-box ul .account-detail {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .navbar .account-show-box ul .account-detail a, .logoutBtn {
+    text-decoration: none;
+    color: black;
+  }
+
+  .account-detail .logoutBtn {
+    border: 0;
+    background-color: white;
+    outline: none;
+  }
+
+  .navbar .account-show-box ul .account-detail a:hover, .logoutBtn:hover, .navbar .account-show-box ul .account-detail:hover {
+    color: #CD5C5C;
+    cursor: pointer;
+  }
+
+  .content {
+      width: 100%;
+      /* height: 1000px; */
+      background-color: #f2f2f2;
+      margin-top: 56px;
+      /* position: relative; */
+  }
+ 
+  /* .content-box {
+    background-color: black;
+    width: 100%;
+    height: 300px;
+  } */
+
+ .content .leftbar {
+     float: left;
+     width: 15%;
+     /* position: fixed;
+     margin-top: 48px; */
+     box-shadow: 1px 5px 12px #999;
+ }
+
+ .content .contentbar {
+    float: left;
+    width: 85%;
+    /* position: absolute;
+    margin-top: 50px;
+    margin-left: 203px; */
+    /* background-color: tomato; */
+ }
+  
+ .content .contentbar .content-area {
+  display: flex;
+  width: 97%;
+  margin: 20px;
+ }
+
+
+ /* home page data box */
+ .content-area .data-record-box {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #999;
+ }
+
+ .data-record-box .data-box {
+   width: 21%;
+   height: 79%;
+   padding: 10px;
+   margin: 10px;
+   float: left;
+   text-align: center;
+ }
+
+ .data-record-box .data-box h2 {
+   font-size: 30px;
+ }
+
+
+  /* Style the sidebar - fixed full height */
+.sidebar {
+    width: 100%;
+    /* height: 100%; */
+    /* position: fixed; */
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    /* padding-top: 16px; */
+    overflow-y: hidden;
+  }
+  
+  .sidebar a,.side-button, .showmore {
+      display: block;
+      /* border: 0.5px solid black; */
+  }
+
+  /* Style sidebar links */
+  .sidebar a ,.side-button, .showmore {
+    /* height: 20px; */
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    min-width: 400px;/*screen less than 400 hidden word*/
+  }
+
+  /*asideleft.php logout btn*/
+  .side-button {
+    border: 0px;
+    background: none;
+    min-width: 0px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .sidebar-dropdown-content {
+      display: none;
+      /* position: relative;
+      left: -7%; */
+      margin-left: -2px;
+      font-size: 10px;
+  }
+  
+
+   .sidebar-dropdown-content a {
+       font-size: 15px;
+       padding-left: 55px;
+   }
+
+   .sidebar a #changeaction .iconshow {
+       display: inline-block;
+   }
+   
+   .sidebar a #changeaction .iconhide {
+       display: none;
+   }
+
+   .show {display: inline-block;}
+  /* .sidebar .showmore {
+      margin-top: 120px;
+      border: 0;
+      display: none;
+      cursor: pointer;
+  } */
+
+  .sidebar a span {
+      display: inline-block;
+  }
+
+  /* Style links on mouse-over */
+  .sidebar a:hover, .side-button:hover {
+    color: black;
+  }
+  
+  .sidebar a #dialog-box {
+     font-size: 15px;
+  }
+   
+  .sidebar .sidebar-dropdown-content .icondistance {
+      font-size: 15px;
+      padding-right: 15px;
+  }
+
+  /* .active {
+    background-color: green;
+    color: black;
+  } */
+
+  /*手机版 When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 800px) {
+    .topnav a:not(:first-child), .dropdown .dropbtn {
+      display: none;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+    .sidebar a {font-size: 15px;border: 0;}
+    .sidebar a span {display: none;}
+    .sidebar {width: auto; padding-right: 10px;}
+    /* .sidebar .showmore {display: inline-block;} */
+    .sidebar-dropdown-content a {font-size: 10px; padding-left: 30px;}
+    .sidebar-dropdown-content a {padding-left: 10px;}
+    .sidebar .sidebar-dropdown-content .icondistance {font-size: 10px; padding-right: 5px;}
+    #task{display: none;}
+    .logout-modal-content {width:60%!important;}
+  }
+  
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 800px) {
+    body{overflow-x: hidden;}
+    .topnav.responsive {position: relative; box-shadow: 0px 5px 20px #888888;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 30px;
+      color: #333;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .topnav.responsive .dropdown {float: none;}
+    .topnav.responsive .dropdown-content {position: relative;}
+    .topnav.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .content {
+      margin-top: 85px;
+      /* margin-left: 80%; */
+    }
+    .navbar .topnav .navbar-right-box {
+      /* margin: 4px 0 4px 630px; */
+      margin-left: 80%;
+    }
+    .content-area .data-record-box {width: 97%;}
+    .account-show-box {left: 540px;}
+    .data-record-box .data-box {width: 17%;padding: 8px;margin: 7px;}
+    .grid-container {grid-template-columns: 30% auto auto auto!important;}
+  }
+
+  /* Add media queries for small screens (when the height of the screen is less than 450px, add a smaller padding and font-size) */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
