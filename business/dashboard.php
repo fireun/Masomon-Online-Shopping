@@ -11,7 +11,7 @@
   $thisYear_after = date('Y-m-d 24:60:60', strtotime($thisYear_before . '+ 365 days'));
 
   $sellerId = $_SESSION['sellerId'];
-  $calThisMonthlySql = "SELECT SUM(cartintegration.quantity * product.price) AS 'totalOfMontly' FROM cartintegration LEFT JOIN product ON cartintegration.productId = product.id WHERE cartintegration.sellerId = '$sellerId' AND cartintegration.status = 'closed' AND ( cartintegration.created_time >= '$thisMonth_before' AND cartintegration.created_time <= '$thisMonth_after' )";
+  $calThisMonthlySql = "SELECT SUM(cartintegration.quantity * product.price) AS 'totalOfMontly' FROM cartintegration LEFT JOIN product ON cartintegration.productId = product.id WHERE cartintegration.sellerId = '$sellerId' AND cartintegration.status = 'closed' AND ( cartintegration.created_time >= '$thisMonth_before' OR cartintegration.created_time <= '$thisMonth_after' )";
   $resultThisMontly = $conn->query($calThisMonthlySql);
   if($resultThisMontly->num_rows > 0){
     while($row = $resultThisMontly->fetch_assoc()){
@@ -24,7 +24,7 @@
     $totalAmountOfMontly = 0;
   }
 
-  $calThisYearSql = "SELECT SUM(cartintegration.quantity * product.price) AS 'totalOfYear' FROM cartintegration LEFT JOIN product ON cartintegration.productId = product.id WHERE cartintegration.sellerId = '$sellerId' AND cartintegration.status = 'closed' AND ( cartintegration.created_time >= '$thisYear_before' AND cartintegration.created_time <= '$thisYear_after' )";
+  $calThisYearSql = "SELECT SUM(cartintegration.quantity * product.price) AS 'totalOfYear' FROM cartintegration LEFT JOIN product ON cartintegration.productId = product.id WHERE cartintegration.sellerId = '$sellerId' AND cartintegration.status = 'closed' AND ( cartintegration.created_time >= '$thisYear_before' OR cartintegration.created_time <= '$thisYear_after' )";
   $resultThisYear = $conn->query($calThisYearSql);
   if($resultThisYear->num_rows > 0){
     while($row = $resultThisYear->fetch_assoc()){

@@ -13,7 +13,7 @@
   if($_SESSION['warehouseAdminId']){
     $warehouseAdminId = $_SESSION['warehouseAdminId'];
 
-    $todaySql = "SELECT COUNT(track.trackId) AS 'todayCount' FROM `track` WHERE status = 'In Transit' OR status = 'pending' AND (estimate_Arrived >= '$today_before' AND estimate_Arrived <= '$today_after')";
+    $todaySql = "SELECT COUNT(track.trackId) AS 'todayCount' FROM `track` WHERE status = 'In Transit' OR status = 'pending' AND (estimate_Arrived >= '$today_before' OR estimate_Arrived <= '$today_after')";
     $resultToday = $conn->query($todaySql);
     if($resultToday ->num_rows>0){
       while($row = $resultToday ->fetch_assoc()){
@@ -23,7 +23,7 @@
       $todayNum = 0;
     }
 
-    $monthSql = "SELECT COUNT(track.trackId) AS 'monthCount' FROM `track` WHERE status = 'In Transit' OR status = 'pending' AND (estimate_Arrived >= '$month_before' AND estimate_Arrived <= '$month_after')";
+    $monthSql = "SELECT COUNT(track.trackId) AS 'monthCount' FROM `track` WHERE status = 'In Transit' OR status = 'pending' AND (estimate_Arrived >= '$month_before' OR estimate_Arrived <= '$month_after')";
     $resultMonth = $conn->query($monthSql);
     if($resultMonth ->num_rows>0){
       while($row = $resultMonth ->fetch_assoc()){
@@ -54,7 +54,7 @@
     $todayDate_after = date("Y-m-d 00:00:00",strtotime($date . '+ '.$count.' day'));
 
 
-    $sql = "SELECT COUNT(track.trackId) AS 'num' FROM `track` WHERE (track.status = 'In Transit' OR track.status = 'pending') AND (track.estimate_Arrived >= '$todayDate_before' AND track.estimate_Arrived <= '$todayDate_after') AND adminReceiveName = ''";
+    $sql = "SELECT COUNT(track.trackId) AS 'num' FROM `track` WHERE (track.status = 'In Transit' OR track.status = 'pending') AND (track.estimate_Arrived >= '$todayDate_before' OR track.estimate_Arrived <= '$todayDate_after') AND adminReceiveName = ''";
     $result = $conn->query($sql);
     // $result=$conn->query("SELECT SUM(product.price * cartintegration.quantity) AS 'total' FROM `cartintegration` LEFT JOIN `product` ON cartintegration.productId = product.id WHERE cartintegration.status = 'closed' AND cartintegration.cancelRequest = '0' AND cartintegration.returnRequest = '0' AND (cartintegration.update_time >= '$setMonth_before' AND cartintegration.update_time <= '$setMonth_after') AND cartintegration.sellerId = '$sellerId'");
     while($row=$result->fetch_assoc()){
