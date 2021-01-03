@@ -16,6 +16,11 @@ Seller Account
 username: tom
 pass: password
 
+Warehouse Admin
+username: admin
+password: password
+
+
 @@Develop By IT-19B Woon Xun D190203B & Wu Xuan 
 @@Project Title: Masamon Online Shopping
 @@Copyright BY: IT-19B
