@@ -53,12 +53,11 @@
     $todayDate_before = date("Y-m-d 00:00:00",strtotime($date . '+ '.$day.' day'));
     $todayDate_after = date("Y-m-d 00:00:00",strtotime($date . '+ '.$count.' day'));
 
-
-    $sql = "SELECT COUNT(track.trackId) AS 'num' FROM `track` WHERE (track.status = 'In Transit' OR track.status = 'pending') AND (track.estimate_Arrived >= '$todayDate_before' OR track.estimate_Arrived <= '$todayDate_after') AND adminReceiveName = ''";
+    $sql = "SELECT COUNT(track.trackId) AS 'num' FROM `track` WHERE (track.status = 'In Transit' OR track.status = 'pending')  AND adminReceiveName = '' AND (track.estimate_Arrived BETWEEN '$todayDate_before' AND  '$todayDate_after')";
     $result = $conn->query($sql);
     // $result=$conn->query("SELECT SUM(product.price * cartintegration.quantity) AS 'total' FROM `cartintegration` LEFT JOIN `product` ON cartintegration.productId = product.id WHERE cartintegration.status = 'closed' AND cartintegration.cancelRequest = '0' AND cartintegration.returnRequest = '0' AND (cartintegration.update_time >= '$setMonth_before' AND cartintegration.update_time <= '$setMonth_after') AND cartintegration.sellerId = '$sellerId'");
     while($row=$result->fetch_assoc()){
-      $day_format = date("l",strtotime($todayDate_before));
+      $day_format = date("d/m/Y",strtotime($todayDate_before));
       $total= $row['num'];
 
       if($total == NULL){
