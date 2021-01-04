@@ -127,7 +127,7 @@ if($_GET['orderID']){
         <!-- Part One -->
         <div class="row shadow-sm p-3 mb-3 bg-white rounded">
             <div class="col-8">
-                Order <?php echo $order_id;?> <br>
+                <?php echo $order_id;?> <br>
                 <span class="text-muted">Place On <?php echo $PalcedOrderDate;?></span>
             </div>
             <div class="col-4 pt-2 pl-4">
