@@ -5,82 +5,46 @@ date_default_timezone_set("Asia/Kuala_Lumpur");
 // echo date('d-m-Y H:i:s'); //Returns IST
 $date =  date("Y-m-d H:i:s");// current year-month-days hours:minut:seconts
 
-// if(isset($_SESSION['username'])){
-//     $user=$_SESSION['username'];
-//     $userId=$_SESSION['userId'];
+$userId = $_SESSION['userId'];
+if($_SESSION['userId']){
+    // check available first
+    $checkCartEmpty = "SELECT * FROM `cartintegration` WHERE userId = '$userId' AND status = '' AND cartId = '' ORDER BY created_time DESC LIMIT 1";  
+    $resultCheckCartEmpty = $conn->query($checkCartEmpty); 
 
-//     if(isset($_POST['remove'])){
-//        $dID = $_POST['deleteId'];
-//        $remover="delete from cartintegration where cartIntegrationId = '$dID' and userId='$userId' and cartId = ''";
-//        $removerResult=$conn->query($remover);
-        
-//        if($removerResult == true){
-//             echo '<script>window.alert("Product Is Remove from Cart")</script>';
-//             header('refresh:0.5;url=../user/cart.php');
-//        }else{
-//             echo '<script>window.alert("Failed to Remover Cart")</script>';
-//        }
-//      }
-//   }else{
-//     echo "<script>alert('must login first');
-//         window.location.href= '../user/login.php';</script>";
-// }
+    if($resultCheckCartEmpty ->num_rows>0){
+        while($row = $resultCheckCartEmpty ->fetch_assoc()){
+            $relatedProduct_id = $row['productId'];
 
-// if(isset($_POST['update'])){
-//     $user=$_SESSION['username'];
-//     $userId=$_SESSION['userId'];
-//     $EditVariation = $_POST['editVariation'];
-//     $EditQuantity = $_POST['editQuantity'];
-//     $EditCart = $_POST['EditCartIntegrationId'];
-   
-//     if(empty($EditQuantity)){
-//         echo '<script>window.alert("Quantity Empty")</script>';
-//     }else if(empty($EditCart)){
-//         echo '<script>window.alert("unvalid cart id")</script>';
-//     }else{
-//         echo $UpdateCart = "update cartintegration set variation = '$EditVariation', quantity = '$EditQuantity' where cartIntegrationId ='$EditCart'";
-//         $resultUpdate = $conn->query($UpdateCart);
-//         if($resultUpdate == true){
-//             echo '<script>window.alert("Update Success")</script>';
-//         }else{
-//             echo '<script>window.alert("Update Failed")</script>';
-//         }
-//     }
-// }
+            $checkRelatedDetail = "SELECT * FROM `product` WHERE status = '' AND auctionStatus = 'no' AND id = '$relatedProduct_id'";
+            $resultCheckRelatedDetail = $conn->query($checkRelatedDetail); 
+            if($resultCheckRelatedDetail ->num_rows>0){
+                while($row = $resultCheckRelatedDetail ->fetch_assoc()){
+                    $relatedProduct_name = $row['name'];
+                    $relatedProduct_category = $row['categoryId'];
+                    $relatedProduct_brand = $row['brand'];
+                }
 
+            }else{
+                echo '<style type="text/css">
+                .card-footer {
+                    position:fixed;
+                    }
+                </style>';
+                $relatedProduct_id = null;
+            }
 
-// if(isset($_POST['checkout'])){  
-//     $generateCartId = uniqid();
-//     $totalPrice = $_POST['totalPrice'];
-//     $unifiedDelivery = '';
-//     $userId = $_SESSION['userId'];
+        }
 
-//     if(empty($_POST['cartIntegrationID'])){ //No item checked
-//         echo'<script type=text/javascript>window.alert("No Fill Product Size")</script> ';
-//     }else{
-//         foreach($_POST['cartIntegrationID'] as $UpdateCartID){
+    }else{ //if empty cart
+        echo '<style type="text/css">
+           .card-footer {
+            position:fixed;
+            }
+        </style>';
+        $relatedProduct_id = null;
+    }
+}
 
-//             $update= "update cartintegration set cartId = '$generateCartId' where cartIntegrationId = '$UpdateCartID'";
-
-//             //run sql
-//             $updateresult=$conn->query($update);
-//         }
-
-//         if( empty($_POST["unifiedDelivery"]) ){ 
-//         $unifiedDelivery = 1 ; //disagree
-//         }else { 
-//             $unifiedDelivery = 0; //agree
-//         }
-
-//         $in_ch=mysqli_query($conn,"insert into cart(cartId,userId,total,unifiedDelivery) values ('$generateCartId','$userId','$totalPrice','$unifiedDelivery')");  
-
-//         if($in_ch==1 && $updateresult == 1){  
-//             echo'<script>alert("Inserted Successfully")</script>';  
-//         }else {  
-//             echo'<script>alert("Failed To Insert")</script>';  
-//         }  
-//     }
-// }  
 ?>
 
 <!DOCTYPE html>
@@ -239,7 +203,10 @@ $date =  date("Y-m-d H:i:s");// current year-month-days hours:minut:seconts
                     width: 80%; /* Could be more or less, depending on screen size */
                 }
                 .edit-modal-header {margin-bottom:8px;}
-                
+                .card-footer {height:160px!important;padding:2%!important;}     
+                .pull-left {float:none!important;}
+                .pull-right {float:none!important;padding-left:5%!important;}
+
             }
 
             @media screen and (max-height:800px){
@@ -358,7 +325,7 @@ $date =  date("Y-m-d H:i:s");// current year-month-days hours:minut:seconts
                                 }
                             ?>
                      </div>
-                     <div class="card-footer" style="height: 72px; position: fixed;height: 100px;bottom: 0;width: 100%;background-color:#f2f2f2">
+                     <div class="card-footer" style="height: 100px;bottom: 0;width: 100%;background-color:#f2f2f2">
                         <div class="pull-left mt-3 ml-4">
                             <div>
                                 <input type="checkbox" name="CheckAll" id="checkAll" onclick="toggle(this);">
@@ -397,6 +364,58 @@ $date =  date("Y-m-d H:i:s");// current year-month-days hours:minut:seconts
                  </div>
                  </form>
                  </div>
+
+                <?php
+                    if($relatedProduct_id != null){
+                ?>
+                <!-- related Product -->
+                <div class="col-xl-12 bg-white mt-3">
+                    <div class="col-xl-12">
+                        <h3>Related Product</h3>
+                    </div>
+
+                    <!-- product show -->
+                    <div class="col-xl-12 col-md-6">
+                        <div class="row">
+                        <?php 
+                            $escape_relate_name = mysqli_real_escape_string($conn,$relatedProduct_name);
+                            $escape_relate_brand = mysqli_real_escape_string($conn,$relatedProduct_brand);
+                            $showrelate = "SELECT * FROM `product` WHERE name LIKE '%$escape_relate_name%' OR brand LIKE '%$escape_relate_brand%' OR categoryId = '$relatedProduct_category' AND status = '' AND auctionStatus = 'no' LIMIT 10";
+                            $resultshowrelate = $conn->query($showrelate); 
+
+                            if($resultshowrelate ->num_rows>0){
+                                while($row = $resultshowrelate ->fetch_assoc()){
+                                    $relatedProduct_show_coverImage = $row['coverImage'];
+                                    $relatedProduct_show_name = $row['name'];
+                                    $relatedProduct_show_price = $row['price'];
+                                    $relatedProduct_show_id = $row['id'];
+
+                                    if( strlen( $relatedProduct_show_name ) > 30 ) {
+                                        $relatedProduct_show_name = substr( $relatedProduct_show_name, 0, 30 ) . '...';
+                                    }
+                        ?>
+                        <div class="card m-3" style="width: 15rem;">
+                            <img class="card-img-top" src="../images/productImage/<?php echo $relatedProduct_show_coverImage;?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $relatedProduct_show_name;?></h5>
+                                <h5 style="color:#CD5C5C">RM <?php echo $relatedProduct_show_price;?></h5>
+                                <a href="productDetail.php?productId=<?php echo $relatedProduct_show_id;?>" class="btn btn-danger">View Detail</a>
+                            </div>
+                        </div>
+                        <?php
+                                }
+                            }
+                        ?>
+                        </div>
+                    </div>
+                    <!-- End product show -->
+                    
+                </div>
+                <?php
+                    }
+                ?>
+                
+                
          </div>
 
     <form action="../database/user/checkout.php" method="post">
