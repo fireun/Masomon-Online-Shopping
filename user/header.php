@@ -161,7 +161,10 @@
                                             $CartProductName = $row['name'];
                                             $CartProductPrice = $row['price'];
                                             $CartProductImage = $row['coverImage'];
-                                            
+                                           
+                                            if( strlen( $CartProductName ) > 30 ) {
+                                                $CartProductName = substr( $CartProductName, 0, 30 ) . '...';
+                                            }
                                 ?>
                                     <div class="row">
                                         <div class="col-md-4">
