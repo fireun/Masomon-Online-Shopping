@@ -5,8 +5,9 @@ date_default_timezone_set("Asia/Kuala_Lumpur");
 // echo date('d-m-Y H:i:s'); //Returns IST
 $date =  date("Y-m-d H:i:s");// current year-month-days hours:minut:seconts
 
-$userId = $_SESSION['userId'];
+
 if($_SESSION['userId']){
+    $userId = $_SESSION['userId'];
     // check available first
     $checkCartEmpty = "SELECT * FROM `cartintegration` WHERE userId = '$userId' AND status = '' AND cartId = '' ORDER BY created_time DESC LIMIT 1";  
     $resultCheckCartEmpty = $conn->query($checkCartEmpty); 
