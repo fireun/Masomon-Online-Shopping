@@ -4,10 +4,18 @@ session_start();
 
 if(isset($_POST['logout'])){
     // session_destroy();
-    unset($_SESSION['userId']);
-    unset($_SESSION['username']);
-    echo "<script>alert('logout success !!!');
-    window.location.href= '../user/home.php';</script>";
+    if($_SESSION['userId']){
+        $userId = $_SESSION['userId'];
+        echo $udpatelastloginTime = "UPDATE user SET lastLogin = '$date' WHERE userId = '$userId'";
+        $resultUpdateLastLogin = $conn->query($udpatelastloginTime);
+  
+        if($resultUpdateLastLogin == true){
+            unset($_SESSION['userId']);
+            unset($_SESSION['username']);
+            echo "<script>alert('logout success !!!');
+            window.location.href= '../user/home.php';</script>"; 
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
