@@ -45,7 +45,7 @@
     }
   }
 
-  //logout
+    //logout
   if(isset($_GET['logout'])){
     $sellerId = $_SESSION['sellerId'];
     $udpatelastloginTime = "UPDATE seller SET lastLogin = '$date' WHERE sellerId = '$sellerId'";
@@ -54,7 +54,10 @@
     if($resultUpdateLastLogin == true){
         $_SESSION['m'] = "logout-success-notic-01";
         $_SESSION['m_last_action'] = time();
-        session_destroy();
+        // session_destroy();
+        unset($_SESSION['sellerId']);
+        unset($_SESSION['sellerName']);
+        unset($_SESSION['sellerImage']);
         header("location:./login.php");
     }
 
