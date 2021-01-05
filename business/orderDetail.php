@@ -871,7 +871,7 @@
                                   <div class="tracking-date"><?php echo $monthAndDay;?>, <?php echo $year;?><span><?php echo $time;?></span></div>
                                   <div class="tracking-content">Shipment arrived at [<?php echo $view_orderDetail_receiverState;?> Warehouse] , MALAYSIA station.<span><?php echo $currentLocation;?> MALAYSIA, MALAYSIA</span></div>
                               </div>
-                            <?php
+                              <?php
                                           }else if($packageStatus == "picked up"){
                             ?>
                               <div class="tracking-item">
@@ -879,7 +879,17 @@
                                   <svg t="1607874404535" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4844" width="32" height="32"><path d="M832.00208 384.00736H268.808557v358.395878h563.193523V384.00736z m0-51.199411V204.809421a25.599706 25.599706 0 0 0-25.599706-25.599706H294.408262a25.599706 25.599706 0 0 0-25.599705 25.599706v127.998528h563.193523zM217.609146 742.403238V204.809421a76.799117 76.799117 0 0 1 76.799116-76.799117h511.994112a76.799117 76.799117 0 0 1 76.799117 76.799117v537.593817h84.479029a25.599706 25.599706 0 0 1 0 51.199412H218.812332a127.998528 127.998528 0 0 1-127.998528-127.998528V210.134159L14.936276 35.851364A25.599706 25.599706 0 1 1 61.886136 15.397199l77.976704 179.197939A25.599706 25.599706 0 0 1 142.013215 204.809421v460.794701A76.799117 76.799117 0 0 0 217.609146 742.403238z m153.598233 281.596762a102.398822 102.398822 0 1 1 0-204.797645 102.398822 102.398822 0 0 1 0 204.797645z m0-51.199411a51.199411 51.199411 0 1 0 0-102.398823 51.199411 51.199411 0 0 0 0 102.398823z m358.395879 51.199411a102.398822 102.398822 0 1 1 0-204.797645 102.398822 102.398822 0 0 1 0 204.797645z m0-51.199411a51.199411 51.199411 0 1 0 0-102.398823 51.199411 51.199411 0 0 0 0 102.398823z" p-id="4845" fill="#2c2c2c"></path></svg>
                                   </div>
                                   <div class="tracking-date"><?php echo $monthAndDay;?>, <?php echo $year;?><span><?php echo $time;?></span></div>
-                                  <div class="tracking-content">Your parcel has been succesfully picked up by <?php echo $view_orderDetail_receiverState;?> Warehouse (Tracking ID: <?php echo $row['trackId'];?>)<span><?php echo $currentLocation;?> MALAYSIA, MALAYSIA</span></div>
+                                  <?php
+                                  if($view_orderDetail_orderUnifiedDeliver == "0"){
+                                  ?>
+                                  <div class="tracking-content">Your parcel has been succesfully picked up by <?php echo $view_orderDetail_receiverState;?> Warehouse (Tracking ID: <?php echo $row['trackCartIntegrationId'];?>)<span><?php echo $currentLocation;?> MALAYSIA, MALAYSIA</span></div>
+                                  <?php
+                                  }else{
+                                  ?>
+                                  <div class="tracking-content">Your parcel has been succesfully picked up by <?php echo $view_orderDetail_receiverState;?> Warehouse (Tracking ID: <?php echo $trackId;?>)<span><?php echo $currentLocation;?> MALAYSIA, MALAYSIA</span></div>
+                                  <?php
+                                  }
+                                  ?>
                               </div>
                             <?php
                                           }else if($packageStatus == "Out Of Delivery"){
