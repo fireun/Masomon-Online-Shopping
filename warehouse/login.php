@@ -50,7 +50,7 @@
     }
   }
 
-  //logout
+   //logout
   if(isset($_GET['logout'])){
 
     if(isset($_SESSION['warehouseAdminId'])){
@@ -62,7 +62,10 @@
       if($resultUpdateLastLogin == true){
           $_SESSION['m'] = "logout-success-notic-01";
           $_SESSION['m_last_action'] = time();
-          session_destroy();
+          // session_destroy();
+          unset($_SESSION['warehouseAdminId']);
+          unset($_SESSION['warehouseAdminName']);
+          unset($_SESSION['warehouseAdminImage']);
           header("location:./login.php");
       }
 
