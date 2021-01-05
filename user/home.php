@@ -3,7 +3,9 @@ include("../config.php");
 session_start();
 
 if(isset($_POST['logout'])){
-    session_destroy();
+    // session_destroy();
+    unset($_SESSION['userId']);
+    unset($_SESSION['username']);
     echo "<script>alert('logout success !!!');
     window.location.href= '../user/home.php';</script>";
 }
