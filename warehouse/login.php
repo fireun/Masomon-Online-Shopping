@@ -56,7 +56,7 @@
     if(isset($_SESSION['warehouseAdminId'])){
       $warehouseAdminId = $_SESSION['warehouseAdminId'];
        $status = "offline";
-      $udpatelastloginTime = "UPDATE admin SET status = '$status', lastLogin = '$date' WHERE adminId = '$warehouseAdminId'";
+      $udpatelastloginTime = "UPDATE admin SET status = '$status', last_login = '$date' WHERE adminId = '$warehouseAdminId'";
       $resultUpdateLastLogin = $conn->query($udpatelastloginTime);
 
       if($resultUpdateLastLogin == true){
