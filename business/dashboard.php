@@ -4,6 +4,7 @@
 
   date_default_timezone_set("Asia/Kuala_Lumpur");
   $date =  date("Y-m-d");// current year-month-days hours:minut:seconts
+  if($_SESSION['sellerId']){
 
   $thisMonth_before = date('Y-m-01 00:00:00', strtotime($date));
   $thisMonth_after = date('Y-m-t 24:60:60', strtotime($date . '+ 1 days'));
@@ -93,7 +94,11 @@
       
     }
   }
-  $jsonstring = json_encode($json); //make to ["month",total]
+  $jsonstring = json_encode($json); //make to ["month",total];
+    
+    }else{
+  header('location:login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
