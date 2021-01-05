@@ -202,6 +202,7 @@
     }else if(flashdata == "logout-success-notic-01"){
         Swal.fire(
             'Logout Success!',
+            '',
             'success'
         )
     }else if(flashdata == "Wrong-Password-notic-01"){
