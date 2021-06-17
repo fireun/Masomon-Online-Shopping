@@ -8,9 +8,9 @@ Some Step To SetUp
 
 If have any problem, Please let me know. Thank For Use.
 
-user part = http://localhost/testProject/user/home.php
-seller part = http://localhost/testProject/business/login.php
-warehouse admin = http://localhost/testProject/warehouse/login.php
+user part = https://masomon.000webhostapp.com/user/home.php
+seller part = https://masomon.000webhostapp.com/business/login.php
+warehouse admin = https://masomon.000webhostapp.com/warehouse/login.php
 
 Seller Account
 username: tom
