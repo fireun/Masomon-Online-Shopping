@@ -1,4 +1,4 @@
-<h1>Please read this page before using our system!</h1>
+<h1 style="color:red;font-weight:bold">Please read this page before using our system!</h1>
 -----------------------------------------------------------------------
 
 Some Step To SetUp 
