@@ -12,9 +12,6 @@
   </p>
 </p>
 
-## Contributors
-  - Woon Xun
-  - Pua Wu Xuan
 
   
 <!-- ABOUT THE PROJECT -->
@@ -56,3 +53,8 @@ password: password </br>
 Warehouse Account </br>
 username: admin </br>
 password: password </br>
+
+
+## Contributors
+  - Woon Xun
+  - Pua Wu Xuan
