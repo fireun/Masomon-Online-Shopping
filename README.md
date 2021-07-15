@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/fireun/Masomon-Online-Shopping">
-    <img src="images/user.png" alt="Logo" width="100" height="100">
+    <img src="images/seller.png" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">Masomon Online Shopping</h3>
@@ -45,9 +45,9 @@ If have any problem, Please let me know. Thank For Use.
 
 ## Demo link
 
-user -  https://masomon.000webhostapp.com/user/home.php 
-seller - https://masomon.000webhostapp.com/business/login.php
-warehouse - https://masomon.000webhostapp.com/warehouse/login.php
+user -  https://masomon.000webhostapp.com/user/home.php </br>
+seller - https://masomon.000webhostapp.com/business/login.php </br>
+warehouse - https://masomon.000webhostapp.com/warehouse/login.php </br>
 
 Seller Account
 username: tom
