@@ -36,9 +36,9 @@ It is currently only a preliminary version.
 ## SETUP
 Some Step To SetUp 
 
-1)Payment Method PayPal - need change your paypal API in row 6&7 (../database/PayPal/Paypal.php) 
+1) Payment Method PayPal - need change your paypal API in row 6&7 (../database/PayPal/Paypal.php) 
 
-2)filename - if use different, please change to correct filname in row 9&10 (../database/PayPal/Paypal.php)
+2) filename - if use different, please change to correct filname in row 9&10 (../database/PayPal/Paypal.php)
 
 If have any problem, Please let me know. Thank For Use.
 
