@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/fireun/Masomon-Online-Shopping">
-    <img src="images/seller.png" alt="Logo" width="100" height="100">
+    <img src="images/seller.png" alt="Logo" width="300" height="300">
   </a>
 
   <h3 align="center">Masomon Online Shopping</h3>
@@ -49,10 +49,10 @@ user -  https://masomon.000webhostapp.com/user/home.php </br>
 seller - https://masomon.000webhostapp.com/business/login.php </br>
 warehouse - https://masomon.000webhostapp.com/warehouse/login.php </br>
 
-Seller Account
-username: tom
-password: password
+Seller Account </br>
+username: tom </br>
+password: password </br>
 
-Warehouse Account
-username: admin
-password: password
+Warehouse Account </br>
+username: admin </br>
+password: password </br>
