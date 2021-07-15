@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/fireun/Masomon-Online-Shopping">
-    <img src="images/seller.png" alt="Logo" width="300" height="300">
+    <img src="images/seller.png" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Masomon Online Shopping</h3>
