@@ -6,10 +6,6 @@
   </a>
 
   <h3 align="center">Masomon Online Shopping</h3>
-
-  <p align="center">
-    This is a Online Food Ordering System for Project II
-  </p>
 </p>
 
 
