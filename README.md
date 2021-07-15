@@ -32,8 +32,8 @@ Customers can easily use and purchase our system. The seller can use the seller 
 
 It is currently only a preliminary version.
 
-!important
 
+## SETUP
 Some Step To SetUp 
 
 1)Payment Method PayPal - need change your paypal API in row 6&7 (../database/PayPal/Paypal.php) 
